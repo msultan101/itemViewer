@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.example.itemViewer.service.itemServices;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +22,8 @@ public class itemViewerRestController {
         items.add(new item("Kajal", "III", "USA"));
         items.add(new item("Sukesh", "VI", "USA"));
     }
+    @Autowired
+    itemServices instance;
 
     @RequestMapping(value = "/getItems")
     public List<item> getItems() {
