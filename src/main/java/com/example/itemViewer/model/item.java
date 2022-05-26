@@ -2,9 +2,12 @@ package com.example.itemViewer.model;
 
 import org.springframework.stereotype.Component;
 
-@Component
-public class item {
+import javax.persistence.*;
 
+@Entity
+public class item {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id ;
     private String name;
     private String cls;
@@ -16,6 +19,18 @@ public class item {
         super();
         this.name = name;
         this.cls = cls;
+        this.country = country;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCls(String cls) {
+        this.cls = cls;
+    }
+
+    public void setCountry(String country) {
         this.country = country;
     }
 
